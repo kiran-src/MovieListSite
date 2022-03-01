@@ -44,6 +44,16 @@ db.create_all()
 @app.route("/")
 def home():
     movies = []
+    for i in db.session.query(Movie).all():
+        movies.append({
+            'title': i.title,
+            'year': i.year,
+            'description': i.description,
+            'rating': i.rating,
+            'ranking': i.ranking,
+            'review': i.review,
+            'img_url': i.img_url
+        })
     return render_template("index.html", movies=movies)
 
 
