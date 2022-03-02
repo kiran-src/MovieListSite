@@ -30,8 +30,8 @@
           <p class="review">"{{i.review}}"</p>
         <p class="overview">{{i.description}}</p>
 
-        <a href="#" class="button">Update</a>
-        <a href="#" class="button delete-button">Delete</a>
+        <a href="{{url_for('edit', title=i.title)}}" class="button">Update</a>
+        <a href="{{url_for('delete', title=i.title)}}" class="button delete-button">Delete</a>
 
       </div>
     </div>
