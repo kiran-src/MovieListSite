@@ -14,18 +14,18 @@
 {% block content %}
 <div class="container">
   <h1 class="heading">My Top 10 Movies</h1>
-  <p class="description">These are my all time favourite movies.</p>
-   {% for i in movies %}
+  <p class="description">These are my all-time favourite movies.</p>
+    {% for i in movies %}
   <div class="card" >
     <div class="front" style="background-image: url('{{i.img_url}}');">
-        <p class="large">1</p>
+        <p class="large">{{i.id}}</p>
     </div>
     <div class="back">
       <div>
     <div class="title">{{i.title}} <span class="release_date">({{i.year}})</span></div>
         <div class="rating">
             <label>{{i.rating}}</label>
-          <i class="fas fa-star star">{{i.ranking}}</i>
+          <i class="fas fa-star star"></i>
         </div>
           <p class="review">"{{i.review}}"</p>
         <p class="overview">{{i.description}}</p>
@@ -39,7 +39,7 @@
     {% endfor %}
 </div>
 <div class="container text-center add">
-<a href="#" class="button">Add Movie</a>
+<a href="{{url_for('add')}}" class="button">Add Movie</a>
 </div>
 
 {% endblock %}
